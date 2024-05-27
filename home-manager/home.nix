@@ -68,10 +68,10 @@
 	# Aesthetics
 	###
 
-	google-cursor
 	rofi
 	starship
 	polybar
+	google-cursor
 
 	###
 	# Security - General
@@ -158,6 +158,24 @@
 	#	];
 	#};
   };
+
+  #stylix.cursor.package = pkgs.google-cursor;
+  #stylix.cursor.name = "GoogleDot-White";
+
+  #stylix.fonts = {
+  #  monospace = {
+  #    package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+  #    name = "JetBrainsMono Nerd Font Mono";
+  #  };
+  #  sansSerif = {
+  #    package = pkgs.dejavu_fonts;
+  #    name = "DejaVu Sans";
+  #  };
+  #  serif = {
+  #    package = pkgs.dejavu_fonts;
+  #    name = "DejaVu Serif";
+  #  };
+  #};
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
