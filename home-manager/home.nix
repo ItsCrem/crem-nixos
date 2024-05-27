@@ -44,6 +44,7 @@
     username = "crem";
     homeDirectory = "/home/crem";
   };
+  
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
@@ -159,23 +160,8 @@
 	#};
   };
 
-  #stylix.cursor.package = pkgs.google-cursor;
-  #stylix.cursor.name = "GoogleDot-White";
 
-  #stylix.fonts = {
-  #  monospace = {
-  #    package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
-  #    name = "JetBrainsMono Nerd Font Mono";
-  #  };
-  #  sansSerif = {
-  #    package = pkgs.dejavu_fonts;
-  #    name = "DejaVu Sans";
-  #  };
-  #  serif = {
-  #    package = pkgs.dejavu_fonts;
-  #    name = "DejaVu Serif";
-  #  };
-  #};
+
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
