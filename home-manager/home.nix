@@ -75,7 +75,7 @@
 	certipy
 	responder
 	unstable.netexec
-	#unstable.adidnsdump
+	unstable.adidnsdump
 	evil-winrm
 	bloodhound-py
 	fping
@@ -84,7 +84,7 @@
 	samba
 	kerbrute
 	coercer
-	#autobloody
+	unstable.autobloody
 
 
 	###
@@ -99,7 +99,7 @@
 	padre
 	gau
 	masscan
-	#rdwatool
+	unstable.rdwatool
 	# burpsuite-professional
 	# trevorspray
 	# cewler
