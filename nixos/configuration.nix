@@ -71,13 +71,27 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
-  networking.hostName = "nixos"; 
+  networking.hostName = "nixos";
+  
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  # Time Zone
+  time.timeZone = "Australia/Sydney";
+
+  programs.zsh.enable = true;
 
   users.users = {
     crem = {
       # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
       # Be sure to change it (using passwd) after rebooting!
       isNormalUser = true;
+      shell = pkgs.zsh;
       extraGroups = ["wheel" "networkmanager"];
       packages = with pkgs; [
         git
