@@ -1,0 +1,2 @@
+# crem-nixos
+nixos config
