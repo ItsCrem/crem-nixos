@@ -20,7 +20,7 @@
   nixpkgs = {
     # You can add overlays here
     overlays = [
-    	outputs.overlay.unstable-packages
+    	outputs.overlays.unstable-packages
       # If you want to use overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
