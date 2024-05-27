@@ -61,7 +61,24 @@
 	zsh
 	krb5
 	docker
+	vscode
+	alacritty
+
+	###
+	# Aesthetics
+	###
+
+	google-cursor
+	rofi
+	starship
+	polybar
+
+	###
+	# Security - General
+	###
+
 	seclists
+
 
 	###
 	# Internal
