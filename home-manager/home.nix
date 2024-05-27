@@ -52,7 +52,6 @@
 	# General
 	###
 
-	firefox
 	neovim
 	neofetch
 	fzf
@@ -62,6 +61,7 @@
 	zsh
 	krb5
 	docker
+	seclists
 
 	###
 	# Internal
@@ -92,15 +92,25 @@
 	###
 
 	sqlmap
+	sslscan
 	ffuf
 	gobuster
+	feroxbuster
 	nuclei
 	httpx
 	padre
 	gau
+	findomain
+	subfinder
+	dnsx
+	amass
+	wfuzz
+	gowitness
 	masscan
 	unstable.rdwatool
-	# burpsuite-professional
+	(unstable.burpsuite.override {
+		proEdition = true;
+	})
 	# trevorspray
 	# cewler
 	# shortscan
@@ -121,6 +131,16 @@
 	# dhcpd
 
   ];
+
+  # Firefox
+  programs.firefox = {
+  	enable = true;
+	#profiles.crem = {
+	#	extensions = with pkgs.inputs.firefox-addons; [
+	#		ublock-origin
+	#	];
+	#};
+  };
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

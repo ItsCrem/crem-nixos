@@ -19,6 +19,9 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    systems = [
+      "x86_64-linux"
+    ];
   in {
 
     # Custom Packags and modfications as overlays
