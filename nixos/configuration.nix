@@ -85,6 +85,9 @@
   time.timeZone = "Australia/Sydney";
 
   programs.zsh.enable = true;
+  
+  # Allow Unfree
+  nixpkgs.config.allowUnfree = true;
 
   users.users = {
     crem = {

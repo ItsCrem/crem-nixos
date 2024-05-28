@@ -13,12 +13,22 @@
 
     # Stylix
     stylix.url = "github:danth/stylix";
+
+    # Catppuccin
+    catppuccin.url = "github:catppuccin/nix";
+
+    # Firefox Addons
+    firefox-addons = {
+	url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+	inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     stylix,
+    catppuccin,
     home-manager,
     ...
   } @ inputs: let
@@ -53,6 +63,8 @@
         # > Our main home-manager configuration file <
         modules = [
 	./home-manager/home.nix
+	catppuccin.homeManagerModules.catppuccin
+	
 	];
       };
     };

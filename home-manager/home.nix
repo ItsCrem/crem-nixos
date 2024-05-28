@@ -52,16 +52,15 @@
     };
   };
  
-
-  # Cursor GTK
-  #x11 = {
-  #	enable = true;
-  #	cursorTheme = {
-  #		package = pkgs.google-cursor;
-  #		name = "GoogleDot-White";
-  #		size = 16;
-  #	};
-  #};
+  gtk = {
+  	enable = true;
+	catppuccin = {
+		enable = true;
+		accent = "lavender";
+		size = "standard";
+		tweaks = [ "normal" ];
+	};
+  };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
@@ -70,7 +69,6 @@
 	# General
 	###
 
-	neovim
 	neofetch
 	python3
 	go
@@ -169,21 +167,48 @@
 
   ];
 
+  # Catpuccin
+  catppuccin.flavor = "mocha";
+
+  programs.neovim = {
+	enable = true;
+	viAlias = true;
+	vimAlias = true;
+	vimdiffAlias = true;
+	withPython3 = true;
+	extraConfig = ''
+		set number relativenumber
+	'';
+	
+  };
+
   # Firefox
   programs.firefox = {
   	enable = true;
-	#profiles.crem = {
-	#	extensions = with pkgs.inputs.firefox-addons; [
-	#		ublock-origin
-	#	];
-	#};
+	profiles.crem = {
+		extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+			temporary-containers
+			foxyproxy-standard
+			firefox-color
+			multi-account-containers
+		];
+	};
   };
 
+  programs.zellij = {
+  	enable = true;
+	catppuccin.enable = true;
+  };
 
-  programs.bat.enable = true;
+  programs.bat = {
+	enable = true;
+	catppuccin.enable = true;
+  };  
+  
   programs.fzf = {
   	enable = true;
 	enableZshIntegration = true;
+	catppuccin.enable = true;
   };
 
   programs.zsh = {
@@ -191,34 +216,23 @@
 	enableCompletion = true;
 	enableAutosuggestions = true;
 	history.extended = true;
+	syntaxHighlighting = {
+		enable = true;
+		catppuccin.enable = true;
+	};
+
   };
 
   programs.starship = {
 	enable = true;
+	catppuccin.enable = true;
   };
 
   programs.alacritty = {
   	enable = true;
+	catppuccin.enable = true;
 	# shell.program = "/home/crem/.nix-profile/bin/zsh";
 	settings = {
-		colors.normal.black = "#45475a";
-		colors.normal.red = "#f38ba8";
-		colors.normal.green = "#a6e3a1";
-		colors.normal.yellow = "#f9e2af";
-		colors.normal.blue = "#89b4fa";
-		colors.normal.magenta = "#f5c2e7";
-		colors.normal.cyan = "#94e2d5";
-		colors.normal.white = "#bac2de";
-		colors.bright.black = "#585b70";
-		colors.bright.red = "#f38ba8";
-		colors.bright.green = "#a6e3a1";
-		colors.bright.yellow = "#f9e2af";
-		colors.bright.blue = "#89b4fa";
-		colors.bright.magenta = "#f5c2e7";
-		colors.bright.cyan = "#94e2d5";
-		colors.bright.white = "#a6adc8";
-		colors.primary.background = "#1e1e2e";
-		colors.primary.foreground = "#cdd6f4";		
 		font.size = 11;
 		window = {
 			padding.x = 20;
