@@ -72,6 +72,9 @@
   };
 
   networking.hostName = "nixos";
+
+  # Add local bin to path
+  environment.localBinInPath = true;
   
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -86,9 +89,6 @@
 
   programs.zsh.enable = true;
   
-  # Allow Unfree
-  nixpkgs.config.allowUnfree = true;
-
   users.users = {
     crem = {
       # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
@@ -100,11 +100,29 @@
         git
         home-manager
 	open-vm-tools
-	nerdfonts
-	dejavu_fonts
+	bspwm
+	sxhkd
     ];
 
     };
+  };
+
+  # Fonts
+  fonts = {
+	enableDefaultPackages = true;
+	packages = with pkgs; [
+		nerdfonts
+		dejavu_fonts
+		noto-fonts-cjk
+	];
+
+	fontconfig = {
+		defaultFonts = {
+			serif = [ "DejaVu Sans" ];
+			sansSerif = [ "Deja Serif" ];
+			monospace = [ "JetBrainsMono Nerd Font Mono" ];
+		};
+	};
   };
 
     # Stylix
@@ -137,7 +155,16 @@
   };
 
   # Enable X11
-  services.xserver.enable = true;
+  services.xserver = {
+	enable = true;
+	xkb.layout = "us";
+	displayManager.defaultSession = "none+bspwm";
+	windowManager.bspwm = {
+		enable = true;
+		configFile = "/home/crem/Documents/dots/nix/bspwm/bspwmrc";
+		sxhkd.configFile = "/home/crem/Documents/dots/nix/sxhkd/sxhkdrc"; 
+	};
+  };
   
   # Gnome Display Manager
   services.xserver.displayManager.gdm.enable = true;

@@ -51,7 +51,7 @@
 
     };
   };
- 
+
   gtk = {
   	enable = true;
 	catppuccin = {
@@ -81,12 +81,20 @@
 	unzip
 	zellij
 	tmux
+	file
+	pipx
+	ripgrep
+	killall
+	wmname
+	xorg.xev
+	wget
+	feh
+
 
 	###
 	# Aesthetics
 	###
 
-	rofi
 	starship
 	polybar
 	google-cursor
@@ -142,14 +150,22 @@
 	wfuzz
 	gowitness
 	masscan
+	ssh-audit
 	unstable.rdwatool
-	(unstable.burpsuite.override {
-		proEdition = true;
-	})
 	# trevorspray
 	# cewler
 	# shortscan
-	
+
+	### 
+	# BurpSuite Stuff
+	###
+	(unstable.burpsuite.override {
+		proEdition = true;
+	})
+	jython
+
+
+
 	###
 	# Wi-Fi
 	###
@@ -198,6 +214,23 @@
   programs.zellij = {
   	enable = true;
 	catppuccin.enable = true;
+	settings = {
+		themes = {
+			custom-catuppuccin-mocha = {
+				bg = "#585b70";
+          			fg = "#cdd6f4";
+				red = "#f38ba8";
+				green = "#b4befe";
+				blue = "#89b4fa";
+				yellow = "#f9e2af";
+				magenta = "#f5c2e7";
+				orange = "#fab387";
+				cyan = "#89dceb";
+				black = "#181825";
+				white  = "#cdd6f4";
+			};
+		};
+	};
   };
 
   programs.bat = {
@@ -214,13 +247,32 @@
   programs.zsh = {
   	enable = true;
 	enableCompletion = true;
+	autocd = true;
 	enableAutosuggestions = true;
-	history.extended = true;
+	history = {
+		extended = true;
+		ignoreAllDups = true;
+	};
 	syntaxHighlighting = {
 		enable = true;
 		catppuccin.enable = true;
 	};
+	initExtra = ''
+		bindkey '^[[1;5C' emacs-forward-word
+		bindkey '^[[1;5D' emacs-backward-word
+	'';
 
+  };
+
+  programs.rofi = {
+  	enable = true;
+	catppuccin.enable = true;
+  };
+
+  services.polybar = {
+    	enable = true;
+    	catppuccin.enable = true;
+   	script = "/home/crem/Documents/dots/nix/polybar.config.ini";
   };
 
   programs.starship = {
@@ -236,7 +288,7 @@
 		font.size = 11;
 		window = {
 			padding.x = 20;
-			padding.y = 10;
+			padding.y = 20;
 			decorations = "None";
 		};
 		env = {
