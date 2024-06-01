@@ -89,6 +89,8 @@
 	xorg.xev
 	wget
 	feh
+	google-chrome
+	pwgen
 
 
 	###
@@ -104,6 +106,20 @@
 	###
 
 	seclists
+	inetutils
+	cifs-utils
+	freerdp
+	net-snmp
+	nfs-utils
+	ntp
+	openssh
+	openvpn
+	samba
+	step-cli
+	wireguard-go
+	wireguard-tools
+	xrdp
+	go-exploitdb
 
 
 	###
@@ -129,6 +145,16 @@
 	coercer
 	unstable.autobloody
 
+	#-- LDAP --#
+	adenum
+    hekatomb
+    msldapdump
+    ldapmonitor
+    ldapdomaindump
+    ldapnomnom
+    ldeep
+    silenthound
+
 
 	###
 	# External
@@ -136,6 +162,7 @@
 
 	sqlmap
 	sslscan
+	tlsx
 	ffuf
 	gobuster
 	feroxbuster
@@ -152,6 +179,8 @@
 	masscan
 	ssh-audit
 	unstable.rdwatool
+	kiterunner
+	rustscan
 	# trevorspray
 	# cewler
 	# shortscan
@@ -162,7 +191,6 @@
 	(unstable.burpsuite.override {
 		proEdition = true;
 	})
-	jython
 
 
 
@@ -194,6 +222,8 @@
 	withPython3 = true;
 	extraConfig = ''
 		set number relativenumber
+		set tabstop=4
+		set shiftwidth=4 smarttab
 	'';
 	
   };
@@ -208,28 +238,6 @@
 			firefox-color
 			multi-account-containers
 		];
-	};
-  };
-
-  programs.zellij = {
-  	enable = true;
-	catppuccin.enable = true;
-	settings = {
-		themes = {
-			custom-catuppuccin-mocha = {
-				bg = "#585b70";
-          			fg = "#cdd6f4";
-				red = "#f38ba8";
-				green = "#b4befe";
-				blue = "#89b4fa";
-				yellow = "#f9e2af";
-				magenta = "#f5c2e7";
-				orange = "#fab387";
-				cyan = "#89dceb";
-				black = "#181825";
-				white  = "#cdd6f4";
-			};
-		};
 	};
   };
 
