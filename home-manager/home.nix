@@ -91,6 +91,8 @@
 	feh
 	google-chrome
 	pwgen
+	sqlite-web
+	sqlite-utils
 
 
 	###
@@ -147,7 +149,6 @@
 
 	#-- LDAP --#
 	adenum
-    hekatomb
     msldapdump
     ldapmonitor
     ldapdomaindump
