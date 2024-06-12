@@ -93,6 +93,8 @@
 	pwgen
 	sqlite-web
 	sqlite-utils
+	jq
+	exiftool
 
 
 	###
@@ -102,6 +104,7 @@
 	starship
 	polybar
 	google-cursor
+	zoxide
 
 	###
 	# Security - General
@@ -122,6 +125,8 @@
 	wireguard-tools
 	xrdp
 	go-exploitdb
+	libgccjit
+	awscli2
 
 
 	###
@@ -146,7 +151,8 @@
 	kerbrute
 	coercer
 	unstable.autobloody
-
+	cewl
+	postgresql_16
 	#-- LDAP --#
 	adenum
     msldapdump
@@ -182,6 +188,7 @@
 	unstable.rdwatool
 	kiterunner
 	rustscan
+	swaks
 	# trevorspray
 	# cewler
 	# shortscan
@@ -257,6 +264,9 @@
   	enable = true;
 	enableCompletion = true;
 	autocd = true;
+	shellAliases = {
+		fzf-bat = "fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'";
+	};
 	enableAutosuggestions = true;
 	history = {
 		extended = true;
@@ -269,8 +279,16 @@
 	initExtra = ''
 		bindkey '^[[1;5C' emacs-forward-word
 		bindkey '^[[1;5D' emacs-backward-word
+		zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+		zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+		zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
 	'';
 
+  };
+
+  programs.zoxide = {
+  	enable = true;
+	enableZshIntegration = true;
   };
 
   programs.rofi = {

@@ -72,6 +72,7 @@
   };
 
   networking.hostName = "nixos";
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1"];
 
   # Add local bin to path
   environment.localBinInPath = true;
@@ -99,9 +100,10 @@
       packages = with pkgs; [
         git
         home-manager
-	open-vm-tools
-	bspwm
-	sxhkd
+		open-vm-tools
+		bspwm
+		sxhkd
+		dig
     ];
 
     };
