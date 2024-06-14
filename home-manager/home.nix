@@ -175,6 +175,7 @@
 	feroxbuster
 	nuclei
 	httpx
+	cent
 	padre
 	gau
 	findomain
@@ -267,7 +268,8 @@
 	shellAliases = {
 		fzf-bat = "fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'";
 	};
-	enableAutosuggestions = true;
+	
+	autosuggestion.enable = true;
 	history = {
 		extended = true;
 		ignoreAllDups = true;
@@ -332,5 +334,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }

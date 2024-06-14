@@ -160,18 +160,19 @@
   services.xserver = {
 	enable = true;
 	xkb.layout = "us";
-	displayManager.defaultSession = "none+bspwm";
 	windowManager.bspwm = {
 		enable = true;
 		configFile = "/home/crem/Documents/dots/nix/bspwm/bspwmrc";
 		sxhkd.configFile = "/home/crem/Documents/dots/nix/sxhkd/sxhkdrc"; 
 	};
   };
+
+  services.displayManager.defaultSession = "none+bspwm";
   
   # Gnome Display Manager
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }
