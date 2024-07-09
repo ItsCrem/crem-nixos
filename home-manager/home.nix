@@ -12,33 +12,34 @@
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModule
+	inputs.catppuccin.homeManagerModules.catppuccin
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
   ];
 
-  nixpkgs = {
-    # You can add overlays here
-    overlays = [
-    	outputs.overlays.unstable-packages
-      # If you want to use overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
-    ];
-    # Configure your nixpkgs instance
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
-    };
-  };
+  #nixpkgs = {
+  #  # You can add overlays here
+  #  overlays = [
+  #  	outputs.overlays.unstable-packages
+  #    # If you want to use overlays exported from other flakes:
+  #    # neovim-nightly-overlay.overlays.default
+  #
+  #    # Or define it inline, for example:
+  #    # (final: prev: {
+  #    #   hi = final.hello.overrideAttrs (oldAttrs: {
+  #    #     patches = [ ./change-hello-to-hi.patch ];
+  #    #   });
+  #    # })
+  #  ];
+  #  # Configure your nixpkgs instance
+  #  config = {
+  #    # Disable if you don't want unfree packages
+  #    allowUnfree = true;
+  #    # Workaround for https://github.com/nix-community/home-manager/issues/2942
+  #    allowUnfreePredicate = _: true;
+  #  };
+  #};
 
   home = {
     username = "crem";
@@ -240,8 +241,10 @@
   # Firefox
   programs.firefox = {
   	enable = true;
-	prefrences = {
-		"network.captive-portal-service.enabled" = false;
+	policies = {
+		"CaptivePortal" = false;
+		"DisablePocket" = true;
+		"DisableTelemetry" = true;
 	};
 	profiles.crem = {
 		extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
