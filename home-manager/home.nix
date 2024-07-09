@@ -242,7 +242,7 @@
   	enable = true;
 	prefrences = {
 		"network.captive-portal-service.enabled" = false;
-	}
+	};
 	profiles.crem = {
 		extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
 			temporary-containers
