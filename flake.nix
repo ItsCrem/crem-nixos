@@ -58,6 +58,21 @@
 			}
 		];
       };
+	shanks = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration file <
+        modules = [ 
+                        stylix.nixosModules.stylix 
+                        ./hosts/shanks/configuration.nix
+                        home-manager.nixosModules.home-manager {
+                                home-manager.useGlobalPkgs = true;
+                                home-manager.useUserPackages = true;
+                                home-manager.users.crem = import ./home-manager/home.nix;
+                                home-manager.extraSpecialArgs = {inherit inputs outputs;};
+                        }
+                ];
+      };
+
     };
 
     # Standalone home-manager configuration entrypoint
