@@ -13,9 +13,8 @@
     # If you want to use home-manager modules from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModule
 	inputs.catppuccin.homeManagerModules.catppuccin
-
-     ../modules/firefox.nix
-	 ../modules/terminal.nix
+	../modules/terminal
+    ../modules/firefox.nix
   ];
 
   home = {
@@ -220,17 +219,6 @@
 	
   };
 
-  programs.bat = {
-	enable = true;
-	catppuccin.enable = true;
-  };  
-  
-  programs.fzf = {
-  	enable = true;
-	enableZshIntegration = true;
-	catppuccin.enable = true;
-  };
-
   programs.rofi = {
   	enable = true;
 	catppuccin.enable = true;
@@ -241,29 +229,6 @@
     	catppuccin.enable = true;
    		script = "/home/crem/Documents/dots/nix/polybar.config.ini";
   };
-
-  programs.starship = {
-	enable = true;
-	catppuccin.enable = true;
-  };
-
-  programs.alacritty = {
-  	enable = true;
-	catppuccin.enable = true;
-	# shell.program = "/home/crem/.nix-profile/bin/zsh";
-	settings = {
-		font.size = 11;
-		window = {
-			padding.x = 20;
-			padding.y = 20;
-			decorations = "None";
-		};
-		env = {
-			"TERM" = "xterm-256color";
-		};
-	};
-  };
-
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
