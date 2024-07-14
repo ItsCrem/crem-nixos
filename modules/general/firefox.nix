@@ -18,6 +18,7 @@ inputs,
 				foxyproxy-standard
 				firefox-color
 				multi-account-containers
+				sidebery
 			];
 		};
   	};
