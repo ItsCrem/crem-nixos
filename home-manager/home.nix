@@ -14,32 +14,9 @@
     # inputs.nix-colors.homeManagerModule
 	inputs.catppuccin.homeManagerModules.catppuccin
 
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
+     ../modules/firefox.nix
+	 ../modules/terminal.nix
   ];
-
-  #nixpkgs = {
-  #  # You can add overlays here
-  #  overlays = [
-  #  	outputs.overlays.unstable-packages
-  #    # If you want to use overlays exported from other flakes:
-  #    # neovim-nightly-overlay.overlays.default
-  #
-  #    # Or define it inline, for example:
-  #    # (final: prev: {
-  #    #   hi = final.hello.overrideAttrs (oldAttrs: {
-  #    #     patches = [ ./change-hello-to-hi.patch ];
-  #    #   });
-  #    # })
-  #  ];
-  #  # Configure your nixpkgs instance
-  #  config = {
-  #    # Disable if you don't want unfree packages
-  #    allowUnfree = true;
-  #    # Workaround for https://github.com/nix-community/home-manager/issues/2942
-  #    allowUnfreePredicate = _: true;
-  #  };
-  #};
 
   home = {
     username = "crem";
@@ -243,24 +220,6 @@
 	
   };
 
-  # Firefox
-  programs.firefox = {
-  	enable = true;
-	policies = {
-		"CaptivePortal" = false;
-		"DisablePocket" = true;
-		"DisableTelemetry" = true;
-	};
-	profiles.crem = {
-		extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
-			temporary-containers
-			foxyproxy-standard
-			firefox-color
-			multi-account-containers
-		];
-	};
-  };
-
   programs.bat = {
 	enable = true;
 	catppuccin.enable = true;
@@ -272,40 +231,6 @@
 	catppuccin.enable = true;
   };
 
-  programs.zsh = {
-  	enable = true;
-	enableCompletion = true;
-	autocd = true;
-	shellAliases = {
-		fzf-bat = "fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'";
-	};
-	
-	autosuggestion.enable = true;
-	history = {
-		extended = true;
-		ignoreAllDups = true;
-	};
-	syntaxHighlighting = {
-		enable = true;
-		catppuccin.enable = true;
-	};
-	initExtra = ''
-		
-		bindkey '^[[1;5C' emacs-forward-word
-		bindkey '^[[1;5D' emacs-backward-word
-		zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-		zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-		zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
-		path+=('/home/crem/go/bin')
-	'';
-
-  };
-
-  programs.zoxide = {
-  	enable = true;
-	enableZshIntegration = true;
-  };
-
   programs.rofi = {
   	enable = true;
 	catppuccin.enable = true;
@@ -314,7 +239,7 @@
   services.polybar = {
     	enable = true;
     	catppuccin.enable = true;
-   	script = "/home/crem/Documents/dots/nix/polybar.config.ini";
+   		script = "/home/crem/Documents/dots/nix/polybar.config.ini";
   };
 
   programs.starship = {
