@@ -14,9 +14,9 @@ imports = [
 	];
 
     # TODO: split home configs so no need it can be configured per config.
-    external.enable = true;
-    internal.enable = true;
-    oscp-banned.enable = true;
-    web-app.enable = true;
-    wifi.enable = false;
+    external.enable = lib.mkDefault true; 
+    internal.enable = lib.mkDefault true; 
+    oscp-banned.enable = lib.mkDefault true; 
+    web-app.enable = lib.mkDefault true; 
+    wifi.enable = lib.mkDefault true; 
 }

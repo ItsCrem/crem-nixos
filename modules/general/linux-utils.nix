@@ -1,0 +1,23 @@
+{
+inputs,
+outputs,
+lib,
+pkgs,
+...
+}:{
+	home.packages = with pkgs; [
+        unzip
+        zellij
+        tmux
+        file
+        ripgrep
+        killall
+        wmname
+        xorg.xev
+        wget
+        jq
+	    exiftool
+	    binutils
+        pwgen
+    ];
+}
