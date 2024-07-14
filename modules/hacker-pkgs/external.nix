@@ -12,7 +12,6 @@ config,
 	config = lib.mkIf config.external.enable {
 	# All packages used for external assessments
 		home.packages = with pkgs; [
-			sqlmap
             sslscan
             tlsx
             ffuf

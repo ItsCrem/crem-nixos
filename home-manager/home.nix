@@ -45,7 +45,6 @@
 	neofetch
 	git
 	dig
-	
 	python3
 	go
 	rustup
