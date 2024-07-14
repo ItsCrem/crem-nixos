@@ -71,7 +71,7 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
-  networking.hostName = "nixos";
+  networking.hostName = "kuma";
   networking.nameservers = [ "1.1.1.1" "1.0.0.1"];
 
   # Add local bin to path
