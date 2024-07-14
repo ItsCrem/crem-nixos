@@ -1,0 +1,29 @@
+{
+lib,
+pkgs,
+config,
+...
+}:{
+    # packages that have lots of cross over between assessments
+    home.packages = with pkgs; [
+        nmap
+        fping
+        seclists
+        inetutils
+        cifs-utils
+        freerdp
+        net-snmp
+        nfs-utils
+        ntp
+        openssh
+        openvpn
+        samba
+        step-cli
+        wireguard-go
+        wireguard-tools
+        xrdp
+        go-exploitdb
+        libgccjit
+        awscli2
+    ];
+}

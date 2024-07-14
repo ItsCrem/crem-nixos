@@ -13,8 +13,10 @@
     # If you want to use home-manager modules from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModule
 	inputs.catppuccin.homeManagerModules.catppuccin
-	../modules/terminal
     ../modules/firefox.nix
+	../modules/hacker-pkgs
+	../modules/terminal
+	../modules/aesthetics
   ];
 
   home = {
@@ -31,12 +33,6 @@
 
   gtk = {
   	enable = true;
-	#catppuccin = {
-		#enable = true;
-		#accent = "lavender";
-		#size = "standard";
-		#tweaks = [ "normal" ];
-	#};
   };
 
   # Add stuff for your user as you see fit:
@@ -47,15 +43,15 @@
 	###
 
 	neofetch
-	(callPackage ../pkgs/cewler/package.nix {})
-	(callPackage ../pkgs/ntlm-challenger/package.nix {})
+	git
+	dig
+	
 	python3
 	go
 	rustup
 	krb5
 	docker
 	vscode
-	alacritty
 	updog
 	unzip
 	zellij
@@ -75,160 +71,11 @@
 	jq
 	exiftool
 	binutils
-
-
-	###
-	# Aesthetics
-	###
-
-	starship
-	polybar
-	google-cursor
-	zoxide
-
-	###
-	# Security - General
-	###
-
-	seclists
-	inetutils
-	cifs-utils
-	freerdp
-	net-snmp
-	nfs-utils
-	ntp
-	openssh
-	openvpn
-	samba
-	step-cli
-	wireguard-go
-	wireguard-tools
-	xrdp
-	go-exploitdb
-	libgccjit
-	awscli2
-
-
-	###
-	# Internal
-	###
-	python311Packages.impacket
-	python311Packages.msldap
-	python311Packages.lsassy
-	python311Packages.pypykatz
-	ldapdomaindump
-	mitm6
-	certipy
-	responder
-	unstable.netexec
-	unstable.adidnsdump
-	evil-winrm
-	bloodhound-py
-	fping
-	nmap
-	smbmap
-	samba
-	kerbrute
-	coercer
-	unstable.autobloody
-	cewl
-	postgresql_16
-	#-- LDAP --#
-	adenum
-    msldapdump
-    ldapmonitor
-    ldapdomaindump
-    ldapnomnom
-    ldeep
-    silenthound
-
-
-	###
-	# External
-	###
-
-	sqlmap
-	sslscan
-	tlsx
-	ffuf
-	gobuster
-	feroxbuster
-	nuclei
-	httpx
-	cent
-	padre
-	gau
-	findomain
-	subfinder
-	dnsx
-	amass
-	wfuzz
-	gowitness
-	masscan
-	ssh-audit
-	unstable.rdwatool
-	kiterunner
-	rustscan
-	swaks
-	jsluice
-	gospider
-	# trevorspray
-	# cewler
-	# shortscan
-
-	### 
-	# BurpSuite Stuff
-	###
-	(unstable.burpsuite.override {
-		proEdition = true;
-	})
-
-
-
-	###
-	# Wi-Fi
-	###
-
-	wireshark
-	#tshark
-	airgeddon
-	aircrack-ng
-	bettercap
-	#ettercap
-	mdk4
-	hcxdumptool
-	hcxtools
-	# dhcpd
-
+	
   ];
 
   # Catpuccin
   catppuccin.flavor = "mocha";
-
-  programs.neovim = {
-	enable = true;
-	viAlias = true;
-	vimAlias = true;
-	vimdiffAlias = true;
-	withPython3 = true;
-	extraConfig = ''
-		set number relativenumber
-		set tabstop=4
-		set shiftwidth=4 smarttab
-	'';
-	
-  };
-
-  programs.rofi = {
-  	enable = true;
-	catppuccin.enable = true;
-  };
-
-  services.polybar = {
-    	enable = true;
-    	catppuccin.enable = true;
-   		script = "/home/crem/Documents/dots/nix/polybar.config.ini";
-  };
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
