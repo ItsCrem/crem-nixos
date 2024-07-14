@@ -55,12 +55,12 @@
 
   gtk = {
   	enable = true;
-	catppuccin = {
-		enable = true;
-		accent = "lavender";
-		size = "standard";
-		tweaks = [ "normal" ];
-	};
+	#catppuccin = {
+		#enable = true;
+		#accent = "lavender";
+		#size = "standard";
+		#tweaks = [ "normal" ];
+	#};
   };
 
   # Add stuff for your user as you see fit:
@@ -71,6 +71,8 @@
 	###
 
 	neofetch
+	(callPackage ../pkgs/cewler/package.nix {})
+	(callPackage ../pkgs/ntlm-challenger/package.nix {})
 	python3
 	go
 	rustup
@@ -96,6 +98,7 @@
 	sqlite-utils
 	jq
 	exiftool
+	binutils
 
 
 	###
@@ -191,6 +194,8 @@
 	kiterunner
 	rustscan
 	swaks
+	jsluice
+	gospider
 	# trevorspray
 	# cewler
 	# shortscan
@@ -285,11 +290,13 @@
 		catppuccin.enable = true;
 	};
 	initExtra = ''
+		
 		bindkey '^[[1;5C' emacs-forward-word
 		bindkey '^[[1;5D' emacs-backward-word
 		zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 		zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 		zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
+		path+=('/home/crem/go/bin')
 	'';
 
   };
