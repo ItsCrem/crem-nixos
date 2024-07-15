@@ -19,7 +19,6 @@ pkgs,
 			nixpkgs-fmt
 			
 			# python
-			
 			pyright
 			python311Packages.python-lsp-server
 
@@ -34,6 +33,9 @@ pkgs,
 
 			# typst
 			typst-lsp
+
+			# html/css/json
+			vscode-langservers-extracted
 			
 		]; 
 	
