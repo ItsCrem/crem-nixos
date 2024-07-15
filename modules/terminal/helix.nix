@@ -36,6 +36,9 @@ pkgs,
 
 			# html/css/json
 			vscode-langservers-extracted
+
+			# markdown
+			marksman
 			
 		]; 
 	
