@@ -25,5 +25,6 @@ config,
         go-exploitdb
         libgccjit
         awscli2
+		metasploit
     ];
 }

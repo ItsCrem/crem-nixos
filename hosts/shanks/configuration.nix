@@ -65,6 +65,11 @@
   networking.hostName = "shanks";
   networking.nameservers = [ "1.1.1.1" "1.0.0.1"];
 
+  networking.extraHosts = 
+  ''
+  192.168.198.147 ms01.oscp.exam
+  '';
+
   # Add local bin to path
   environment.localBinInPath = true;
   
