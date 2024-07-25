@@ -1,7 +1,4 @@
 {
-inputs,
-outputs,
-lib,
 pkgs,
 ...
 }:{
@@ -16,5 +13,6 @@ pkgs,
         google-chrome
         sqlite-web
         sqlite-utils
+				unstable.ueberzugpp
     ];
 }

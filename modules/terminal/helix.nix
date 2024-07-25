@@ -8,7 +8,6 @@ pkgs,
 
 		programs.helix = {
 			enable = true;
-			catppuccin.enable = true;
 			# will define in toml file
 	  };
 
