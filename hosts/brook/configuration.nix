@@ -83,6 +83,20 @@
 
   programs.zsh.enable = true;
 
+  # 1password requires nixos level https://1password.community/discussion/comment/655813/#Comment_655813
+  programs._1password = {
+    enable = true;
+    package = pkgs.unstable._1password;
+  };
+  programs._1password-gui = {
+    package = pkgs.unstable._1password-gui;
+    enable = true;
+    polkitPolicyOwners = [ "crem" ];
+  };
+  # 1password make fingerprintn auth work
+  #security.pam.services.kwallet.enableKwallet = true;
+  security.polkit.enable = true;
+
   # Set your time zone.
   time.timeZone = "Australia/Sydney";
 
@@ -147,6 +161,7 @@
       kitty
       firefox
       fprintd
+      polkit_gnome
     ];
   };
 

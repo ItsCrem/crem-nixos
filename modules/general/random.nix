@@ -16,8 +16,6 @@ pkgs,
 				unstable.ueberzugpp
 				discord
 				signal-desktop
-				_1password
-				_1password-gui
 				grimblast
 				blueman
 				pavucontrol

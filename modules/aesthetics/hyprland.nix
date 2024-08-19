@@ -53,6 +53,7 @@ services.dunst = {
 };
 
 programs.hyprlock = {
+	package = pkgs.unstable.hyprlock;
 	enable = true;
 };
 
