@@ -15,7 +15,6 @@ pkgs,
         sqlite-utils
 				unstable.ueberzugpp
 				discord
-				dunst
 				signal-desktop
 				_1password
 				_1password-gui
@@ -27,5 +26,6 @@ pkgs,
 				xorg.libxcvt
 				obs-studio
 				vlc
+				papirus-icon-theme
     ];
 }

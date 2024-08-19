@@ -14,7 +14,7 @@
     # inputs.nix-colors.homeManagerModule
 	inputs.catppuccin.homeManagerModules.catppuccin
     ../../modules/general
-    #../../modules/hacker-pkgs
+    ../../modules/hacker-pkgs
     ../../modules/terminal
     ../../modules/aesthetics
   ];

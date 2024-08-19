@@ -29,7 +29,7 @@ config,
             unstable.netexec
             unstable.adidnsdump
 
-            (callPackage ../../pkgs/cewler/package.nix {})
+           # (callPackage ../../pkgs/cewler/package.nix {})
 
             # LDAP #
             python311Packages.msldap
