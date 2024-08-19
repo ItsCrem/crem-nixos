@@ -1,11 +1,12 @@
 {
 lib,
-input,
 ...
 }:{
 
 imports = [	
-	./rofi.nix
+		#./rofi.nix
     ./polybar.nix
+		./hyprland.nix
 	];
+
 }

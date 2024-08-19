@@ -1,11 +1,10 @@
 {
 lib,
-input,
 ...
 }:{
 
 imports = [	
-	./alacritty.nix
+	#./alacritty.nix
 	./bat.nix
 	./fzf.nix
 	./helix.nix

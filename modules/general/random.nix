@@ -14,5 +14,18 @@ pkgs,
         sqlite-web
         sqlite-utils
 				unstable.ueberzugpp
+				discord
+				dunst
+				signal-desktop
+				_1password
+				_1password-gui
+				grimblast
+				blueman
+				pavucontrol
+				wlogout
+				slack
+				xorg.libxcvt
+				obs-studio
+				vlc
     ];
 }

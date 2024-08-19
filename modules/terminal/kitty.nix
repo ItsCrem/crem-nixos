@@ -12,7 +12,7 @@
 		};
 		settings = {
 				enable_audio_bell = "no";
-				window_padding_width = "20";
+				window_padding_width = "5 20";
 		};
   };
 }

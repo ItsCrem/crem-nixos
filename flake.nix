@@ -67,8 +67,24 @@
             home-manager.useUserPackages = true;
             home-manager.users.crem = import ./hosts/shanks/home.nix;
             home-manager.extraSpecialArgs = {inherit inputs outputs;};
+            home-manager.backupFileExtension = "bak";
           }
         ];
+      };
+
+      brook = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration file <
+        modules = [ 
+          stylix.nixosModules.stylix 
+          ./hosts/brook/configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.crem = import ./hosts/brook/home.nix;
+            home-manager.extraSpecialArgs = {inherit inputs outputs;};
+	  }
+	];
       };
     };
   };
