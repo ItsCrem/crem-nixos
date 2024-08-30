@@ -74,6 +74,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Enable docker daemon
+  virtualisation.docker.enable = true;
+
   # Disable firewall
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -96,6 +99,19 @@
   # 1password make fingerprintn auth work
   #security.pam.services.kwallet.enableKwallet = true;
   security.polkit.enable = true;
+
+  # proxychains configuration
+  programs.proxychains = {
+    enable = true;
+    proxies = {
+      tooling = {
+        type = "socks4";
+        host = "127.0.0.1";
+        port = 8060;
+        enable = true;
+      };
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "Australia/Sydney";
@@ -154,7 +170,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "crem";
-    extraGroups = [ "networkmanager" "wheel" "input"];
+    extraGroups = [ "networkmanager" "wheel" "input" "docker"];
     packages = with pkgs; [
     #  thunderbird
       home-manager
@@ -173,6 +189,8 @@
     nerdfonts
 		dejavu_fonts
 		noto-fonts-cjk
+    inter
+    jetbrains-mono
 	];
 
 	fontconfig = {

@@ -22,13 +22,26 @@ lib,
 			enable = true;
 			catppuccin.enable = true;
 		};
-		initExtra = ''	
+		initExtra = ''
+
+			function yy() {
+				local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+				yazi "$@" --cwd-file="$tmp"
+				if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+					builtin cd -- "$cwd"
+				fi
+				rm -f -- "$tmp"
+			}
+			
 			bindkey '^[[1;5C' emacs-forward-word
 			bindkey '^[[1;5D' emacs-backward-word
 			zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 			zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 			zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
 			path+=('/home/crem/go/bin')
+
+			# direnv / lorri intialisation
+			eval "$(direnv hook zsh)"
 		'';
   };
 }

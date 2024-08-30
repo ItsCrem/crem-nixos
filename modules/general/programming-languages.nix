@@ -9,5 +9,6 @@ pkgs,
         python3
         go
         rustup
+				typst
     ];
 }

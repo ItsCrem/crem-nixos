@@ -57,6 +57,10 @@ programs.hyprlock = {
 	enable = true;
 };
 
+programs.swaylock = {
+	enable = true;
+};
+
 }
 
 

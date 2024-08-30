@@ -17,6 +17,7 @@ pkgs,
 				discord
 				signal-desktop
 				grimblast
+				swappy
 				blueman
 				pavucontrol
 				wlogout
@@ -25,5 +26,9 @@ pkgs,
 				obs-studio
 				vlc
 				papirus-icon-theme
+				zathura
+				python311Packages.tomli
+				python311Packages.watchdog
+				obsidian
     ];
 }

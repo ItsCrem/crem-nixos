@@ -16,8 +16,11 @@ pkgs,
         xorg.xev
         wget
         jq
-	    exiftool
-	    binutils
+		    exiftool
+		    binutils
         pwgen
+				networkmanagerapplet
+				docker-compose
+				zip
     ];
 }
