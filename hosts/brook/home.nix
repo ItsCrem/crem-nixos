@@ -38,9 +38,6 @@
     };
   };
 
-  # lorri
-  services.lorri.enable = true;
-
   # Catpuccin
   catppuccin.flavor = "mocha";
 

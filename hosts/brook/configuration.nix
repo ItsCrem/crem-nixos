@@ -113,6 +113,9 @@
     };
   };
 
+  # lorri / direnv
+  services.lorri.enable = true;
+
   # Set your time zone.
   time.timeZone = "Australia/Sydney";
 
