@@ -61,6 +61,10 @@ programs.swaylock = {
 	enable = true;
 };
 
+programs.gowall = {
+	enable = true;
+};
+
 }
 
 

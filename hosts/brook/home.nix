@@ -30,6 +30,17 @@
     };
   };
 
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
+  };
+
+  home.sessionVariables.GTK_THEME = "Adwaita-dark";
+
   gtk = {
   	enable = true;
     theme = {

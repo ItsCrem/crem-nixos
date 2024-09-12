@@ -29,11 +29,7 @@ pkgs,
 
 			# javascript / typescript
 			unstable.typescript-language-server
-
-			# typst
-			typst-lsp
-			unstable.tinymist
-
+				
 			# html/css/json
 			vscode-langservers-extracted
 

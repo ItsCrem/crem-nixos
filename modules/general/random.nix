@@ -30,5 +30,6 @@ pkgs,
 				python311Packages.tomli
 				python311Packages.watchdog
 				obsidian
+				dconf
     ];
 }
