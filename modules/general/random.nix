@@ -31,5 +31,7 @@ pkgs,
 				python311Packages.watchdog
 				obsidian
 				dconf
+				wirelesstools
+				usbutils
     ];
 }

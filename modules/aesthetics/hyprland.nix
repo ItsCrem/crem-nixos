@@ -25,7 +25,7 @@ programs.rofi = {
 };
 
 services.dunst = {
-	enable = true;
+	enable = false;
 	iconTheme = {
 		package = pkgs.papirus-icon-theme;
 		size = "64x64";
@@ -53,15 +53,11 @@ services.dunst = {
 };
 
 programs.hyprlock = {
-	package = pkgs.unstable.hyprlock;
+	package = pkgs.hyprlock;
 	enable = true;
 };
 
 programs.swaylock = {
-	enable = true;
-};
-
-programs.gowall = {
 	enable = true;
 };
 

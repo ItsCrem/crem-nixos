@@ -7,6 +7,6 @@ lib,
 	programs.git = {
 		enable = true;
         userName = "Max Alster-Caminer";
-        userEmail = "max@alstercaminer.com";
+        userEmail = "max.alster-caminer@mantelgroup.com.au";
   	};
 }

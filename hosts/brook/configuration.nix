@@ -55,6 +55,8 @@
   networking.nameservers = ["1.1.1.1" "1.0.0.1" ];
 
   environment.localBinInPath = true;
+
+  programs.nix-ld.enable = true;
   
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -70,6 +72,8 @@
   }).fwupd;
 
   services.fprintd.enable = true;
+
+  services.tailscale.enable = true;
   
   # Enable networking
   networking.networkmanager.enable = true;
@@ -227,11 +231,11 @@
   	};
   	image = "";
   	polarity = "dark";
-  	cursor = {
-  		package = pkgs.google-cursor;
-  		name = "GoogleDot-White";
-  		size = 16;
-	  };
+  	#cursor = {
+  	#	package = pkgs.google-cursor;
+  	#	name = "GoogleDot-White";
+  	#	size = 16;
+	  #};
   };
   
   # Hyprland
