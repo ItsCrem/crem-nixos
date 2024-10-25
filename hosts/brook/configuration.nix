@@ -231,11 +231,11 @@
   	};
   	image = "";
   	polarity = "dark";
-  	#cursor = {
-  	#	package = pkgs.google-cursor;
-  	#	name = "GoogleDot-White";
-  	#	size = 16;
-	  #};
+  	cursor = {
+  		package = pkgs.google-cursor;
+  		name = "GoogleDot-White";
+  		size = 16;
+	  };
   };
   
   # Hyprland

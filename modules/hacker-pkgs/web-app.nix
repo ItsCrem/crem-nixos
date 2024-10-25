@@ -19,9 +19,14 @@ config,
             jsluice
             gospider
 
-            (unstable.burpsuite.override {
-		        proEdition = true;
-	        })
+						# Currently burp browser isn't working
+            #(unstable.burpsuite.override {
+		        	#proEdition = true;
+	        	#})
+										
+						(callPackage ../../pkgs/burpsuite/package.nix {
+							proEdition = true;
+						})
         ];
 	};
 }

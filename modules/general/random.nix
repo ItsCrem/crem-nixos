@@ -33,5 +33,7 @@ pkgs,
 				dconf
 				wirelesstools
 				usbutils
+				# kdePackages.dolphin
+				mesa
     ];
 }

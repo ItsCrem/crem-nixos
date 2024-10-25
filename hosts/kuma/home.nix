@@ -22,12 +22,12 @@
   home = {
     username = "crem";
     homeDirectory = "/home/crem";
-    #pointerCursor = {
-    #	x11.enable = true;
-    #  package = pkgs.google-cursor;
-    #  name = "GoogleDot-White";
-    #  size = 16;
-    #};
+    pointerCursor = {
+    	x11.enable = true;
+      package = pkgs.google-cursor;
+      name = "GoogleDot-White";
+      size = 16;
+    };
   };
 
   gtk = {
