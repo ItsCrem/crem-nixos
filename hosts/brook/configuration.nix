@@ -185,6 +185,7 @@
       firefox
       fprintd
       polkit_gnome
+      brightnessctl
     ];
   };
 

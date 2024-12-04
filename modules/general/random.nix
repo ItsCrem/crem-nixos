@@ -35,5 +35,8 @@ pkgs,
 				usbutils
 				# kdePackages.dolphin
 				mesa
+				snyk
+				ollama
+				oterm
     ];
 }
