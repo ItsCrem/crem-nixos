@@ -13,7 +13,7 @@ pkgs,
 
         extraPackages = with pkgs; [
           gtksourceview
-          webkitgtk
+          #webkitgtk
           accountsservice
     ];
   };

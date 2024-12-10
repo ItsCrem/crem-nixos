@@ -18,15 +18,12 @@ config,
             kiterunner
             jsluice
             gospider
-
-						# Currently burp browser isn't working
-            #(unstable.burpsuite.override {
-		        	#proEdition = true;
-	        	#})
-										
-						(callPackage ../../pkgs/burpsuite/package.nix {
+						(unstable.burpsuite.override {
 							proEdition = true;
 						})
+						(callPackage ../../pkgs/smugglefuzz/package.nix {})
+						(callPackage ../../pkgs/sourcemapper/package.nix {})
         ];
+
 	};
 }

@@ -93,7 +93,7 @@
   # 1password requires nixos level https://1password.community/discussion/comment/655813/#Comment_655813
   programs._1password = {
     enable = true;
-    package = pkgs.unstable._1password;
+    package = pkgs.unstable._1password-cli;
   };
   programs._1password-gui = {
     package = pkgs.unstable._1password-gui;
@@ -196,7 +196,7 @@
 		font-awesome
     nerdfonts
 		dejavu_fonts
-		noto-fonts-cjk
+		noto-fonts-cjk-sans
     inter
     jetbrains-mono
 	];
