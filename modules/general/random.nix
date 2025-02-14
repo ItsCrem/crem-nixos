@@ -38,5 +38,6 @@ pkgs,
 				snyk
 				ollama
 				oterm
+				anew
     ];
 }
