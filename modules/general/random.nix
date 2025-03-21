@@ -27,8 +27,6 @@ pkgs,
 				vlc
 				papirus-icon-theme
 				zathura
-				python311Packages.tomli
-				python311Packages.watchdog
 				obsidian
 				dconf
 				wirelesstools

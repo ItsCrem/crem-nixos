@@ -7,7 +7,6 @@ pkgs,
   		enable = true;
 			package = pkgs.unstable.yazi;
 			enableZshIntegration = true;
-			catppuccin.enable = true;
 			settings = {
 				manager = {
 					sort_by = "natural";

@@ -4,7 +4,6 @@
 
 	programs.kitty = {
 		enable = true;
-		catppuccin.enable = true;
 		shellIntegration.enableZshIntegration = true;
 		font = {
 			size = 11;

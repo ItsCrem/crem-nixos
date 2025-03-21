@@ -23,6 +23,9 @@
     };
 
     ags.url = "github:Aylur/ags";
+
+    # nixos-hardware
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = {
@@ -31,6 +34,7 @@
     stylix,
     catppuccin,
     home-manager,
+    nixos-hardware,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -88,6 +92,22 @@
 	  }
 	];
       };
+	vegapunk = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration file <
+        modules = [ 
+          stylix.nixosModules.stylix 
+          ./hosts/vegapunk/configuration.nix
+          #nixos-hardware.nixosModules.microsoft-surface-common
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.crem = import ./hosts/vegapunk/home.nix;
+            home-manager.extraSpecialArgs = {inherit inputs outputs;};
+          }
+        ];
+      };
+
     };
   };
 }

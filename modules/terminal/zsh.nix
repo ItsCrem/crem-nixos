@@ -20,7 +20,6 @@ lib,
 		};
 		syntaxHighlighting = {
 			enable = true;
-			catppuccin.enable = true;
 		};
 		initExtra = ''
 

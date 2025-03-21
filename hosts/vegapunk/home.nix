@@ -30,12 +30,30 @@
     };
   };
 
-  gtk = {
-  	enable = true;
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
   };
 
-  # bye bye :(
-  oscp-banned.enable = false;
+  home.sessionVariables.GTK_THEME = "Adwaita-dark";
+
+  gtk = {
+  	enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
+
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+  };
+
 
   # Enable home-manager
   programs.home-manager.enable = true;

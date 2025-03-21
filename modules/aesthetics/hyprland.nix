@@ -7,16 +7,10 @@ pkgs,
 
 wayland.windowManager.hyprland.settings = {
 			enable = true;
-			catppuccin.enable = true;
-			catppuccin.accent = "lavender";		
 	  };
 
 programs.waybar = {
 	enable = true;
-	catppuccin = {
-		enable = true;
-		mode = "createLink";
-	};
 };
 
 programs.rofi = {
@@ -31,7 +25,6 @@ services.dunst = {
 		size = "64x64";
 		name = "Paprius-Dark";
 	};
-	catppuccin.enable = true;
 	settings = {
 		global = {
 			origin = "top-center";

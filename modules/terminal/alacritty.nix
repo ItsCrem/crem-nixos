@@ -4,7 +4,6 @@
 
 	programs.alacritty = {
 		enable = true;
-		catppuccin.enable = true;
 		# shell.program = "/home/crem/.nix-profile/bin/zsh";
 		settings = {
 			font.size = 11;

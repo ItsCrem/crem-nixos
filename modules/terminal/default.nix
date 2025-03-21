@@ -8,6 +8,7 @@ imports = [
 	./bat.nix
 	./direnv.nix
 	./fzf.nix
+	./ghostty.nix
 	./helix.nix
 	./kitty.nix
 	./neovim.nix

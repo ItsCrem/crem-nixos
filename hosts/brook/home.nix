@@ -49,9 +49,6 @@
     };
   };
 
-  # Catpuccin
-  catppuccin.flavor = "mocha";
-
   # Enable home-manager
   programs.home-manager.enable = true;
 
